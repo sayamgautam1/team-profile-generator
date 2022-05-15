@@ -1,3 +1,4 @@
+// import employee module
 const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
@@ -6,16 +7,16 @@ describe("Employee", () => {
       const obj = new Employee("Sam", 15, "sam@email.com");
       const employeeName = obj.getName();
 
-      expect(employeeName).toEqual(String);
+      expect(typeof employeeName).toEqual("string");
     });
     it("should return id of the employee", () => {
-      const obj = new Employee("Sam", 15, "sam@email.com");
-      const employeeName = obj.getId();
+      const obj = new Employee("Sa5ggm", 555, "sam@email.com");
+      const employeeId = obj.getId();
 
-      expect(employeeName).toEqual(Number);
+      expect(typeof employeeId).toEqual("number");
     });
     it("should return role of the employee", () => {
-      const obj = new Employee("Sam", 15, "sam@email.com");
+      const obj = new Employee("S43fgam", 15555, "sam@email.com");
       const employeeName = obj.getRole();
 
       expect(employeeName).toEqual("Employee");
