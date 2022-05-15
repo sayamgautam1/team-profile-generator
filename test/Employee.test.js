@@ -17,9 +17,9 @@ describe("Employee", () => {
     });
     it("should return role of the employee", () => {
       const obj = new Employee("S43fgam", 15555, "sam@email.com");
-      const employeeName = obj.getRole();
+      const employeeRole = obj.getRole();
 
-      expect(employeeName).toEqual("Employee");
+      expect(employeeRole).toEqual("Employee");
     });
   });
 });
