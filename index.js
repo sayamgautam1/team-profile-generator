@@ -41,10 +41,10 @@ function getManagerDetails() {
       },
     ])
     .then((details) => {
-      const { managerName, managerId, managerEmail, officeNumber } = details;
+      const { managerName, managerID, managerEmail, officeNumber } = details;
       const managerObj = new Manager(
         managerName,
-        managerId,
+        managerID,
         managerEmail,
         officeNumber
       );
@@ -69,7 +69,7 @@ function getEmployeeInfo() {
       } else if (data.employee === "Intern") {
         getInternDetails();
       } else {
-        console.log(team);
+        generateMarkdown(team);
       }
     });
 }
@@ -147,7 +147,6 @@ function getInternDetails() {
 // working function
 getManagerDetails().then((data) => {
   getEmployeeInfo();
-  console.log(team);
 });
 
 class Team {
