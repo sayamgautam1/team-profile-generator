@@ -29,7 +29,7 @@ function generateManager(data) {
             </div>
             <div class="card-body">
                 <p class="id">ID: ${data.id}</p>
-                <p class="email">Email: <a href="mailto:${data.email}">${data.email}</a></p>
+                <p class="email">Email: <a href="mailto:${data.email} target="_blank"">${data.email}</a></p>
                 <p class="office">Office Number: ${data.officeNumber}</p>
             </div>
         </div>
@@ -47,8 +47,8 @@ function generateEngineer(data) {
             </div>
             <div class="card-body">
                 <p class="id">ID: ${data.id}</p>
-                <p class="email">Email: <a href="mailto:${data.email}">${data.email}</a></p>
-                <p class="github">Github: <a href="https://github.com/${data.github}">${data.github}</a></p>
+                <p class="email">Email: <a href="mailto:${data.email} target="_blank"">${data.email}</a></p>
+                <p class="github">Github: <a href="https://github.com/${data.github}" target="_blank">${data.github}</a></p>
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@ function generateIntern(data) {
             </div>
             <div class="card-body">
                 <p class="id">ID: ${data.id}</p>
-                <p class="email">Email:<a href="mailto:${data.email}">${data.email}</a></p>
+                <p class="email">Email:<a href="mailto:${data.email} target="_blank"">${data.email}</a></p>
                 <p class="school">School: ${data.school}</p>
             </div>
         </div>
