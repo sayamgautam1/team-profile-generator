@@ -43,17 +43,28 @@ WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
 
 ```
+
+
 # MockUp
+Video demo of the applicaiton can be found [here](https://www.youtube.com/watch?v=4V7OA8JCM54)
 ![mockup](./dist/images/teamprofilemockup.png)
+
 ## License
+
 ![badge](https://img.shields.io/badge/license-MIT-yellow)
 <br />
 This application is covered by the MIT license.
+
 ## Contributing
+
 sayam gautam
+
 ## Tests
+
 npm run test
+
 ## Questions
+
 If you have any questions about this projects, please contact me directly through my email<br />
 <br />
 Find me on GitHub: [sayamgautam1](https://github.com/sayamgautam1)<br />
