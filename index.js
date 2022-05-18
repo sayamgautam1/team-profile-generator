@@ -163,6 +163,9 @@ class Team {
   setEmployee(details) {
     this.Employee.push(details);
   }
+  getEmployees() {
+    return this.Employee;
+  }
 }
 const team = new Team();
 

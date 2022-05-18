@@ -1,5 +1,8 @@
 function generateMarkdown(data) {
-  console.log(data.Manager.name);
+  let employeeList = data.getEmployees();
+  employeeList.forEach((employ) => {
+    console.log(employ.getRole());
+  });
 }
 
 module.exports = generateMarkdown;
