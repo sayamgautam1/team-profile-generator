@@ -99,7 +99,7 @@ function getEngineerDetails() {
         message: "What is the engineer's GitHub username?",
       },
     ])
-    .then((data) => {
+    .then((details) => {
       const { engineerName, engineerID, engineerEmail, github } = details;
       const engineerObj = new Engineer(
         engineerName,
@@ -108,6 +108,40 @@ function getEngineerDetails() {
         github
       );
       team.setEmployee(engineerObj);
+      getEmployeeInfo();
+    });
+}
+
+// function to get intern details
+function getInternDetails() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "internName",
+        message: "Enter the intern name?",
+      },
+      {
+        type: "input",
+        name: "internID",
+        message: "Enter the intern employee ID",
+      },
+      {
+        type: "input",
+        name: "internEmail",
+        message: "Enter the intern email adress",
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "What is the intern's school name?",
+      },
+    ])
+    .then((details) => {
+      const { internName, internID, internEmail, school } = details;
+      const internObj = new Engineer(internName, internID, internEmail, school);
+      team.setEmployee(internObj);
+      getEmployeeInfo();
     });
 }
 // working function
