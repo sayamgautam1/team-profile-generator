@@ -69,7 +69,8 @@ function getEmployeeInfo() {
       } else if (data.employee === "Intern") {
         getInternDetails();
       } else {
-        generateMarkdown(team);
+        const HTMLfile = generateMarkdown(team);
+        createHTML(HTMLfile);
       }
     });
 }
@@ -169,10 +170,15 @@ class Team {
 }
 const team = new Team();
 
-// getManagerDetails()
-//   .then(saveManagerDetails)
-//   .then(getEmployeeChoice)
-//   .then((choice) => {
-//     if (choise === "intern/engineer") {
-//     }
-//   });
+// function to write HTML file
+function createHTML(data) {
+  fs.writeFile("./dist/index.html", data, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(
+        "sucessfully created HTML file, please check inside dist folder"
+      );
+    }
+  });
+}
