@@ -53,7 +53,63 @@ function getManagerDetails() {
 }
 
 // function to ask if engineer or intern
+function getEmployeeInfo() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "employee",
+        message: "Would you like to hire an Engineer or Intern?",
+        choices: ["Engineer", "Intern", "No Vacany"],
+      },
+    ])
+    .then((data) => {
+      if (data.employee === "Engineer") {
+        getEngineerDetails();
+      } else if (data.employee === "Intern") {
+        getInternDetails();
+      } else {
+        generateMarkdown();
+      }
+    });
+}
 
+// fn to get engineer details
+function getEngineerDetails() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "engineerName",
+        message: "Enter the engineer name?",
+      },
+      {
+        type: "input",
+        name: "engineerID",
+        message: "Enter the engineer employee ID",
+      },
+      {
+        type: "input",
+        name: "engineerEmail",
+        message: "Enter the engineer's email adress",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What is the engineer's GitHub username?",
+      },
+    ])
+    .then((data) => {
+      const { engineerName, engineerID, engineerEmail, github } = details;
+      const engineerObj = new Engineer(
+        engineerName,
+        engineerID,
+        engineerEmail,
+        github
+      );
+      team.setEmployee(engineerObj);
+    });
+}
 // working function
 getManagerDetails().then((data) => {
   getEmployeeInfo();
@@ -71,7 +127,7 @@ class Team {
   }
 
   setEmployee(details) {
-    this.Employee.push();
+    this.Employee.push(details);
   }
 }
 const team = new Team();
