@@ -69,7 +69,7 @@ function getEmployeeInfo() {
       } else if (data.employee === "Intern") {
         getInternDetails();
       } else {
-        generateMarkdown();
+        console.log(team);
       }
     });
 }
@@ -139,7 +139,7 @@ function getInternDetails() {
     ])
     .then((details) => {
       const { internName, internID, internEmail, school } = details;
-      const internObj = new Engineer(internName, internID, internEmail, school);
+      const internObj = new Intern(internName, internID, internEmail, school);
       team.setEmployee(internObj);
       getEmployeeInfo();
     });
@@ -147,6 +147,7 @@ function getInternDetails() {
 // working function
 getManagerDetails().then((data) => {
   getEmployeeInfo();
+  console.log(team);
 });
 
 class Team {
